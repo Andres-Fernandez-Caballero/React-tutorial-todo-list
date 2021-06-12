@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import logo from "./../../shared/logo.svg";
+import "./../App.css";
 
 const Header = function(props){
     const {

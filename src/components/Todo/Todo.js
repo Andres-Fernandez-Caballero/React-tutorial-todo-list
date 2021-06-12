@@ -66,13 +66,13 @@ class Todo extends React.Component{
         const foundTask = this.state.items.find(
             task => task.id === id
             );
+        const newItems = this.state.items.map(item => item);
+        newItems[id] = foundTask;
         foundTask.completed = true;
         this.setState({
-            items: [
-                ...this.state.items,
-                ...foundTask
-            ]
+            items: newItems
         });
+        console.log(this.state.items);
     }
 
     removeTask = (id) => {
@@ -83,7 +83,6 @@ class Todo extends React.Component{
     }
 
     render(){
-        console.log(this.state.items);
         return(
             <div className="Todo">
                 <h1>New Task:</h1>
